@@ -61,6 +61,10 @@ const PhoneBook = () => {
       <div className={s.wrapper}>
         <div>
           <h1 className="title">Phonebook</h1>
+          <div>
+          <h2 className="title">Contacts</h2>
+          <ContactForm onSubmit={onAdd} />
+        </div>
           <Filter onChange={changeFilter} />
           {loading && <p>Loading...</p>}
           {error && <p>{`Error: ${error}`}</p>}
@@ -69,10 +73,7 @@ const PhoneBook = () => {
           )}
         </div>
 
-        <div>
-          <h2 className="title">Contacts</h2>
-          <ContactForm onSubmit={onAdd} />
-        </div>
+        
       </div>
     </div>
   );
