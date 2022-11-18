@@ -1,0 +1,10 @@
+.title {
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 2vmax;
+    background-color: #2AA5A0;
+    background-image: linear-gradient(40deg, #8E0E00, #1F1C18);
+    background-clip: text;
+    color: transparent;
+
+}

@@ -10,14 +10,6 @@ const ContactItem = (props) => {
 
   return (
     <li className={s.item}>
-      {/* <a className={s.link} href={`tel:${number}`}>
-        <div className={s.wrapper}>
-          <p className={s.name}>{name}</p>
-        </div>
-        <div className={s.wrapper}>
-          <p className={s.number}>{number}</p>
-        </div>
-      </a> */}
       <div className={s.wrapper}>
         {name} : {number}
       </div>
@@ -26,7 +18,7 @@ const ContactItem = (props) => {
         className={s.button}
         text="Detele"
         type="button"
-        onClick={(e) => {onClick(id);}}
+        onClick={() => {onClick(id);}}
       />
     </li>
   );

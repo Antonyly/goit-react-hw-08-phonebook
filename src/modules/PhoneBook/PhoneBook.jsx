@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useCallback, useEffect, useState } from "react";
+import { MagnifyingGlass } from  'react-loader-spinner'
 
 import {
   fetchContacts,
@@ -57,6 +58,7 @@ const PhoneBook = () => {
   const visibleContacts = getVisibleContacts();
 
   return (
+    <>
     <div className="container">
       <div className={s.wrapper}>
         <div>
@@ -66,7 +68,8 @@ const PhoneBook = () => {
           <ContactForm onSubmit={onAdd} />
         </div>
           <Filter onChange={changeFilter} />
-          {loading && <p>Loading...</p>}
+
+
           {error && <p>{`Error: ${error}`}</p>}
           {items.length > 0 && !error && !loading && (
           <Contacts items={visibleContacts} onClick={onRemove} />
@@ -75,7 +78,20 @@ const PhoneBook = () => {
 
         
       </div>
+      
     </div>
+    {loading && <MagnifyingGlass
+  visible={true}
+  height="80"
+  width="80"
+  ariaLabel="MagnifyingGlass-loading"
+  wrapperStyle={{}}
+  wrapperClass="MagnifyingGlass-wrapper"
+  glassColor = '#c0efff'
+  color = '#e15b64'
+  />
+  }
+  </>
   );
 };
 
