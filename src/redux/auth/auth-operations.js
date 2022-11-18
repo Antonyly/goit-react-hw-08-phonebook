@@ -15,6 +15,8 @@ export const signupUser = createAsyncThunk(
       const { data, status } = error.response;
       const { message: messageForUser } = error.response.data;
       const { message } = error;
+      alert('This user has already registered');
+      // alert(message)
       return rejectWithValue({ message, messageForUser, data, status });
     }
   }
@@ -28,6 +30,7 @@ export const loginUser = createAsyncThunk(
     } catch (error) {
       const { data, status } = error.response;
       const { message } = error;
+      alert('This user NOT found')
       return rejectWithValue({ data, status, message });
     }
   }

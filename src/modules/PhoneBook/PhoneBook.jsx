@@ -43,6 +43,7 @@ const PhoneBook = () => {
     (el) => dispatch(addContact(el)),
     [dispatch]
   );
+
   const onRemove = useCallback(
     (id) => {
       dispatch(removeContact(id));

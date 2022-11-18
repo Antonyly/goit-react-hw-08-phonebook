@@ -54,7 +54,7 @@ export const addContact = createAsyncThunk(
       if (isAdded) {
         alert(`"${isAdded.name}" is already in your contacts`);
         return false;
-      }
+      } 
     },
   }
 );

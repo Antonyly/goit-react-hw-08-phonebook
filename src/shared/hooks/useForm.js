@@ -11,12 +11,13 @@ const useForm = ({ onSubmit, initialState, isReset }) => {
       ...prevState,
       [name]: newValue,
     }));
+
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ ...state });
-    if (isReset) {
+    if (!isReset) {
       setState({ ...initialState });
     }
   };
